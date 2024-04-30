@@ -5,6 +5,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  async function fetchAPI() {
+    const response = await fetch("http://localhost:3000/")
+    const items = await response.json()
+    console.log(items, 'this is items')
+  }
+  fetchAPI();
 
   return (
     <>
