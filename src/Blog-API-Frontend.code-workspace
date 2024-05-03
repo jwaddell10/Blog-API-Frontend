@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "../../Blog-API"
+		},
+		{
+			"path": "../../Members-Only"
+		},
+		{
+			"path": "../../Inventory-Application"
 		}
 	],
 	"settings": {}
