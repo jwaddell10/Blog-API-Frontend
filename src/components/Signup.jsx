@@ -12,16 +12,18 @@ function Signup() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const formData = new FormData(event.target);
+		const formDataObject = {};
 		for (let [key, value] of formData.entries()) {
-			console.log(`${key}: ${value}`, "this is key, value");
+			console.log(key, 'this is key', value, 'this is value')
+			formDataObject[key] = value;
 		}
 
 		fetch("http://localhost:3000/signup", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ formData }),
+			body: JSON.stringify({ formDataObject }),
 		})
-			.then((response) => response.text())
+			.then((response) => response.json())
 			.then((data) => {
 				console.log(data, "this is data");
 			});
@@ -33,6 +35,10 @@ function Signup() {
 			<form action="/signup" onSubmit={handleSubmit}>
 				<label>Username:</label>
 				<input type="text" name="name" />
+				<label>Password:</label>
+				<input type="password" name="password" />
+				<label>Confirm Password:</label>
+				<input type="password" name="confirmpassword" />
 				<button type="submit"></button>
 			</form>
 		</>
