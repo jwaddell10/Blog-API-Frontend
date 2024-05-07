@@ -7,19 +7,13 @@ import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 
 function App() {
-	async function fetchAPI() {
-		const response = await fetch("http://localhost:3000/post");
-		const posts = await response.json();
-		console.log(posts, "this is items");
-	}
-	fetchAPI();
 
 	return (
 		<Router>
 			<NavBar />
 			<Routes>
 				<Route path="/" element={<HomePage />}></Route>
-				<Route path="/blog" element={<Blog />}></Route>
+				<Route path="/post" element={<Blog />}></Route>
 				<Route path="/login" element={<Login />}></Route>
 				<Route path="/signup" element={<Signup />}></Route>
 			</Routes>
