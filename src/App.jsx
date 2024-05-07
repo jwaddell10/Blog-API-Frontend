@@ -7,12 +7,6 @@ import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 
 function App() {
-	async function fetchAPI() {
-		const response = await fetch("http://localhost:3000/post");
-		const posts = await response.json();
-		console.log(posts, "this is items");
-	}
-	fetchAPI();
 
 	return (
 		<Router>
