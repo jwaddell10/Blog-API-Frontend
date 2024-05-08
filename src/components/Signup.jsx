@@ -14,7 +14,7 @@ function Signup() {
 		const formData = new FormData(event.target);
 		const formDataObject = {};
 		for (let [key, value] of formData.entries()) {
-			console.log(key, 'this is key', value, 'this is value')
+			console.log(key, "this is key", value, "this is value");
 			formDataObject[key] = value;
 		}
 
