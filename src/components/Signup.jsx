@@ -27,16 +27,37 @@ function Signup() {
 			.then((data) => {
 				console.log(data, "this is data");
 			});
+		// fetch("http://localhost:3000/signup")
+		// 	.then((response) => response.json())
+		// 	.then((data) => {
+		// 		console.log(data, "this is data");
+		// 	})
+		// 	.catch((error) => console.error("Error:", error));
 	};
 
 	return (
 		<>
 			<form action="/signup" onSubmit={handleSubmit}>
-				<input type="text" name="name" placeholder="username" autoComplete="username"/>
+				<input
+					type="text"
+					name="name"
+					placeholder="username"
+					autoComplete="username"
+				/>
 
-				<input type="password" name="current-password" placeholder="password" autoComplete="current-password"/>
+				<input
+					type="password"
+					name="current-password"
+					placeholder="password"
+					autoComplete="current-password"
+				/>
 
-				<input type="password" name="new-password" placeholder="confirm password" autoComplete="new-password"/>
+				<input
+					type="password"
+					name="new-password"
+					placeholder="confirm password"
+					autoComplete="new-password"
+				/>
 
 				<button type="submit">Submit</button>
 			</form>
