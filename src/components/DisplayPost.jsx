@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import FetchPost from "./FetchBlogAPI";
+import FetchPost from "./FetchPost";
 
 function DisplayPost() {
 	const posts = FetchPost();
@@ -24,4 +24,4 @@ function DisplayPost() {
 	);
 }
 
-export default Blog;
+export default DisplayPost;

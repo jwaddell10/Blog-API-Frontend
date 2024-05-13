@@ -1,8 +1,11 @@
-function HomePage () {
-    return (
-        <>
-        <div>homepage test</div></>
-    )
+import DisplayPost from "./DisplayPost";
+
+function HomePage() {
+	return (
+		<>
+			<DisplayPost />
+		</>
+	);
 }
 
 export default HomePage;

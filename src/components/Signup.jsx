@@ -29,17 +29,16 @@ function Signup() {
 			});
 	};
 
-	//handlechange event
 	return (
 		<>
 			<form action="/signup" onSubmit={handleSubmit}>
-				<label>Username:</label>
-				<input type="text" name="name" />
-				<label>Password:</label>
-				<input type="password" name="password" />
-				<label>Confirm Password:</label>
-				<input type="password" name="confirmpassword" />
-				<button type="submit"></button>
+				<input type="text" name="name" placeholder="username" autoComplete="username"/>
+
+				<input type="password" name="current-password" placeholder="password" autoComplete="current-password"/>
+
+				<input type="password" name="new-password" placeholder="confirm password" autoComplete="new-password"/>
+
+				<button type="submit">Submit</button>
 			</form>
 		</>
 	);
