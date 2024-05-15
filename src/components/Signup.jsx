@@ -14,7 +14,6 @@ function Signup() {
 		const formData = new FormData(event.target);
 		const formDataObject = {};
 		for (let [key, value] of formData.entries()) {
-			console.log(key, "this is key", value, "this is value");
 			formDataObject[key] = value;
 		}
 
@@ -27,12 +26,6 @@ function Signup() {
 			.then((data) => {
 				console.log(data, "this is data");
 			});
-		// fetch("http://localhost:3000/signup")
-		// 	.then((response) => response.json())
-		// 	.then((data) => {
-		// 		console.log(data, "this is data");
-		// 	})
-		// 	.catch((error) => console.error("Error:", error));
 	};
 
 	return (
@@ -65,8 +58,4 @@ function Signup() {
 	);
 }
 
-{
-	/* <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required></input> */
-}
 export default Signup;
