@@ -42,21 +42,21 @@ function Signup() {
 					type="text"
 					name="name"
 					placeholder="username"
-					autoComplete="username"
+					autoComplete="name"
 				/>
 
 				<input
 					type="password"
-					name="current-password"
+					name="password"
 					placeholder="password"
-					autoComplete="current-password"
+					autoComplete="password"
 				/>
 
 				<input
 					type="password"
-					name="new-password"
+					name="confirm-password"
 					placeholder="confirm password"
-					autoComplete="new-password"
+					autoComplete="confirm-password"
 				/>
 
 				<button type="submit">Submit</button>
