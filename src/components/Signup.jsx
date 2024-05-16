@@ -47,9 +47,9 @@ function Signup() {
 
 				<input
 					type="password"
-					name="confirm-password"
+					name="passwordConfirmation"
 					placeholder="confirm password"
-					autoComplete="confirm-password"
+					autoComplete="passwordConfirmation"
 				/>
 
 				<button type="submit">Submit</button>
