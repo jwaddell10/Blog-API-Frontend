@@ -14,7 +14,7 @@ function DisplayPost() {
 							<ul>
 								<li>{item.title}</li>
 								<li>{item.date}</li>
-								<li>{item.user.name}</li>
+								<li>{item.name}</li>
 								<li>{item.text}</li>
 							</ul>
 						</div>

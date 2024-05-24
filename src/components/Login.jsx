@@ -1,5 +1,7 @@
+import React, { useState } from "react";
+
 function Login() {
-	//username password form,
+	const [data, setData] = useState(null);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -11,12 +13,24 @@ function Login() {
 
 		fetch("http://localhost:3000/login", {
 			method: "POST",
-
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(formDataObject),
 		})
+			.then((response) => response.json())
+			.then((data) => {
+				setData(data);
+				if (data.token) {
+					window.location.href = "/";
+				}
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+			});
 	};
+
 	return (
 		<>
-			<form action="/login" onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
 					name="name"
@@ -29,14 +43,13 @@ function Login() {
 					placeholder="password"
 					autoComplete="password"
 				/>
-				<input
-					type="password"
-					name="passwordConfirmation"
-					placeholder="confirm password"
-					autoComplete="passwordConfirmation"
-				/>
-				<button type="Submit">Submit</button>
+				<button type="submit">Submit</button>
 			</form>
+			{data && (
+				<div>
+					<div>{data.message}</div>
+				</div>
+			)}
 		</>
 	);
 }
