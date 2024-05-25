@@ -21,23 +21,4 @@ function App() {
 	);
 }
 
-// return (
-//   <Router>
-//     <NavBar />
-//     <Routes>
-//       <Route path="/" element={<HomePage />} />
-//       <Route
-//         path="/shopping"
-//         element={<Shopping addToCart={addToCart} />}
-//       />
-//       <Route
-//         path="/cart"
-//         element={
-//           <Cart cart={cart} removeFromCart={removeFromCart} />
-//         }
-//       />
-//     </Routes>
-//   </Router>
-// );
-
 export default App;

@@ -1,14 +1,7 @@
 import { useOptimistic, useState, useRef } from "react";
-//add optimistic message to make more responsive maybe?
-
-//username, password, confirm password
 
 function Signup() {
-	//form data, setformdata
-	//empty
-	//typing
-	//submitting
-	//success/error
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const formData = new FormData(event.target);

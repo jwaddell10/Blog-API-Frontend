@@ -26,31 +26,4 @@ function NavBar() {
 	);
 }
 
-// return (
-// 	<nav className="navbar" name="navbar">
-// 		<StyledNavBar>
-// 			<h3 style={headingStyle}>Electronics Store</h3>
-// 			<ul>
-// 				<StyledList>
-// 					<li>
-// 						<Link style={linkStyle} to="/">
-// 							Home
-// 						</Link>
-// 					</li>
-// 					<li>
-// 						<Link style={linkStyle} to="/shopping">
-// 							Shopping
-// 						</Link>
-// 					</li>
-// 					<li>
-// 						<Link style={linkStyle} to="/cart">
-// 							Cart
-// 						</Link>
-// 					</li>
-// 				</StyledList>
-// 			</ul>
-// 		</StyledNavBar>
-// 	</nav>
-// );
-
 export default NavBar;

@@ -5,6 +5,8 @@ import FetchPost from "./FetchPost";
 function DisplayPost() {
 	const posts = FetchPost();
 
+	console.log(posts, 'this is posts')
+
 	return (
 		<div>
 			{posts &&
@@ -14,7 +16,7 @@ function DisplayPost() {
 							<ul>
 								<li>{item.title}</li>
 								<li>{item.date}</li>
-								<li>{item.name}</li>
+								<li>{item.user.name}</li>
 								<li>{item.text}</li>
 							</ul>
 						</div>
