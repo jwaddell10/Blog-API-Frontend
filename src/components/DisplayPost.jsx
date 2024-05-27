@@ -4,9 +4,7 @@ import FetchPost from "./FetchPost";
 
 function DisplayPost() {
 	const posts = FetchPost();
-
-	console.log(posts, 'this is posts')
-
+	
 	return (
 		<div>
 			{posts &&

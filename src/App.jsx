@@ -3,8 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import HomePage from "./components/HomePage.jsx";
 import DisplayPost from "./components/DisplayPost.jsx";
-import Login from "./components/Login.jsx";
-import Signup from "./components/Signup.jsx";
+import About from "./components/About.jsx";
 
 function App() {
 
@@ -14,8 +13,9 @@ function App() {
 			<Routes>
 				<Route path="/" element={<HomePage />}></Route>
 				<Route path="/post" element={<DisplayPost />}></Route>
-				<Route path="/login" element={<Login />}></Route>
-				<Route path="/signup" element={<Signup />}></Route>
+				<Route path="/about" element={<About />}></Route>
+				{/* <Route path="/login" element={<Login />}></Route>
+				<Route path="/signup" element={<Signup />}></Route> */}
 			</Routes>
 		</Router>
 	);
