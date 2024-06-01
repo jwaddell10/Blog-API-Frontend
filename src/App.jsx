@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar.jsx";
 import HomePage from "./components/HomePage.jsx";
 import DisplayPost from "./components/DisplayPost.jsx";
 import About from "./components/About.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
 
 function App() {
 
@@ -14,8 +16,8 @@ function App() {
 				<Route path="/" element={<HomePage />}></Route>
 				<Route path="/post" element={<DisplayPost />}></Route>
 				<Route path="/about" element={<About />}></Route>
-				{/* <Route path="/login" element={<Login />}></Route>
-				<Route path="/signup" element={<Signup />}></Route> */}
+				<Route path="/login" element={<Login />}></Route>
+				<Route path="/signup" element={<Signup />}></Route>
 			</Routes>
 		</Router>
 	);
