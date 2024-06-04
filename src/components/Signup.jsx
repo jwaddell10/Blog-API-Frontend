@@ -22,7 +22,7 @@ function Signup() {
 				if (data.errors) {
 					setSignupData(data);
 				} else {
-                    return redirect("/")
+					window.location.href = "/";
 				}
 			});
 	};
