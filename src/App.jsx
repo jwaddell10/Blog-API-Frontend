@@ -4,7 +4,6 @@ import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import HomePage from "./components/HomePage.jsx";
 import DisplayPost from "./components/DisplayPost.jsx";
-import About from "./components/About.jsx";
 import Login from "./components/Login.jsx";
 import Logout from "./components/Logout.jsx";
 import Signup from "./components/Signup.jsx";
@@ -22,8 +21,7 @@ function App() {
 				<NavBar />
 				<Routes>
 					<Route path="/" element={<HomePage />}></Route>
-					<Route path="/post" element={<DisplayPost />}></Route>
-					<Route path="/about" element={<About />}></Route>
+					<Route path="/post" element={<DisplayPost token={token}/>}></Route>
 					{token && (
 						<Route path="/logout" element={<Logout />}></Route>
 					)}

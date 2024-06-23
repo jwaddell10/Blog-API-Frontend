@@ -1,6 +1,7 @@
-function CreateComment({id, comments, setComments }) {
+function CreateComment({ id }) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
+        console.log(id, 'this is id')
 		const JWTToken = localStorage.getItem("JWT Token");
 		const formData = new FormData(event.target);
 		const formDataObject = {};
@@ -20,7 +21,6 @@ function CreateComment({id, comments, setComments }) {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data, 'this is data')
 				return data;
 			});
 	};

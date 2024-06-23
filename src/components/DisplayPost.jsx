@@ -8,7 +8,7 @@ function DisplayPost({ token }) {
 	const posts = FetchPost();
 	const [singlePost, setSinglePost] = useState();
 
-	const handleClick = async (id) => {
+	const fetchSinglePost = async (id) => {
 		//fetch single post
 		const response = await fetch(`http://localhost:3000/post/${id}`);
 		const post = await response.json();
@@ -23,7 +23,7 @@ function DisplayPost({ token }) {
 					return (
 						<div
 							onClick={() => {
-								handleClick(post._id);
+								fetchSinglePost(post._id);
 							}}
 							key={uuidv4()}
 						>
@@ -46,7 +46,7 @@ function DisplayPost({ token }) {
 						<li>{singlePost.text}</li>
 					</ul>
 					<DisplayComment />
-					{token ? <CreateComment /> : <div>Login to comment</div>}
+					{token ? <CreateComment id={singlePost._id}/> : <div>Login to comment</div>}
 				</>
 			)}
 		</div>
