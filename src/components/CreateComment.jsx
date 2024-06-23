@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
+
 function CreateComment({ id }) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
-        console.log(id, 'this is id')
 		const JWTToken = localStorage.getItem("JWT Token");
 		const formData = new FormData(event.target);
 		const formDataObject = {};
@@ -33,6 +34,10 @@ function CreateComment({ id }) {
 			</form>
 		</>
 	);
+}
+
+CreateComment.propTypes = {
+	id: PropTypes.string,
 }
 
 export default CreateComment;

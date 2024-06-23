@@ -1,5 +1,4 @@
-import { useOptimistic, useState, useRef } from "react";
-import { redirect } from "react-router-dom";
+import { useState } from "react";
 
 function Signup() {
 	const [signupData, setSignupData] = useState(null);

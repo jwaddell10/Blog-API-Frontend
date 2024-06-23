@@ -1,28 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import FetchPost from "./FetchPost";
 import CreateComment from "./CreateComment.jsx";
 import DisplayComment from "./DisplayComment.jsx";
+import PropTypes from 'prop-types'
 
-function DisplayPost({ token }) {
-	const posts = FetchPost();
+function DisplayPost({ blogPosts, token, onStateChange }) {
+	const navigate = useNavigate();
 	const [singlePost, setSinglePost] = useState();
+	const [comments, setComments] = useState();
 
 	const fetchSinglePost = async (id) => {
-		//fetch single post
 		const response = await fetch(`http://localhost:3000/post/${id}`);
 		const post = await response.json();
 		setSinglePost(post);
+		navigate(`/post/${post._id}`);
+
+		const commentResponse = await fetch(
+			`http://localhost:3000/${id}/comment`
+		);
+		const comment = await commentResponse.json();
+		setComments(comment);
+	};
+
+	const updatePostIdInParent = (id) => {
+		onStateChange(id);
 	};
 
 	return (
 		<div>
 			{!singlePost &&
-				posts &&
-				posts.map((post) => {
+				blogPosts &&
+				blogPosts.map((post) => {
 					return (
 						<div
 							onClick={() => {
+								updatePostIdInParent(post._id);
 								fetchSinglePost(post._id);
 							}}
 							key={uuidv4()}
@@ -45,12 +58,25 @@ function DisplayPost({ token }) {
 						<li>{singlePost.user.name}</li>
 						<li>{singlePost.text}</li>
 					</ul>
-					<DisplayComment />
-					{token ? <CreateComment id={singlePost._id}/> : <div>Login to comment</div>}
+					<DisplayComment
+						comments={comments}
+						setComments={setComments}
+					/>
+					{token ? (
+						<CreateComment id={singlePost._id} />
+					) : (
+						<div>Login to comment</div>
+					)}
 				</>
 			)}
 		</div>
 	);
+}
+
+DisplayPost.propTypes = {
+	blogPosts: PropTypes.array,
+	token: PropTypes.string,
+	onStateChange: PropTypes.func,
 }
 
 export default DisplayPost;

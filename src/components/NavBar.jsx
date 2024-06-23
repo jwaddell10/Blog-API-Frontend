@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-//navbar, homepage title, home, login, signup,
-
 function NavBar() {
 	const token = localStorage.getItem("JWT Token");
 

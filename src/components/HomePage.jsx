@@ -1,5 +1,3 @@
-import DisplayPost from "./DisplayPost";
-
 function HomePage() {
 	return (
 		<>

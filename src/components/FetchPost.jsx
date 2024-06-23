@@ -14,7 +14,7 @@ function FetchPost() {
 		}
 		getPosts();
 	}, []);
-	return blogPosts;
+	return {blogPosts, setBlogPosts}
 }
 
 export default FetchPost;
