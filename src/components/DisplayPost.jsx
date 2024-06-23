@@ -1,25 +1,54 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import FetchPost from "./FetchPost";
+import CreateComment from "./CreateComment.jsx";
+import DisplayComment from "./DisplayComment.jsx";
 
-function DisplayPost() {
+function DisplayPost({ token }) {
 	const posts = FetchPost();
-	
+	const [singlePost, setSinglePost] = useState();
+
+	const handleClick = async (id) => {
+		//fetch single post
+		const response = await fetch(`http://localhost:3000/post/${id}`);
+		const post = await response.json();
+		setSinglePost(post);
+	};
+
 	return (
 		<div>
-			{posts &&
-				posts.map((item) => {
+			{!singlePost &&
+				posts &&
+				posts.map((post) => {
 					return (
-						<div key={uuidv4()}>
+						<div
+							onClick={() => {
+								handleClick(post._id);
+							}}
+							key={uuidv4()}
+						>
 							<ul>
-								<li>{item.title}</li>
-								<li>{item.date}</li>
-								<li>{item.user.name}</li>
-								<li>{item.text}</li>
+								<li>{post.title}</li>
+								<li>{post.date}</li>
+								<li>{post.user.name}</li>
+								<li>{post.text}</li>
 							</ul>
 						</div>
 					);
 				})}
+
+			{singlePost && (
+				<>
+					<ul>
+						<li>{singlePost.title}</li>
+						<li>{singlePost.date}</li>
+						<li>{singlePost.user.name}</li>
+						<li>{singlePost.text}</li>
+					</ul>
+					<DisplayComment />
+					{token ? <CreateComment /> : <div>Login to comment</div>}
+				</>
+			)}
 		</div>
 	);
 }

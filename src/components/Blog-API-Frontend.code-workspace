@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../../../Members-Only"
+		},
+		{
+			"path": "../../../Blog-API-Admin"
 		}
 	],
 	"settings": {}
