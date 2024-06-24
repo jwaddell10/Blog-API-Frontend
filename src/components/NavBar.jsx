@@ -7,7 +7,7 @@ function NavBar() {
 		<>
 			<nav className="navbar">
 				<h1>BlogAPI</h1>
-				<ul>
+				<ul style={{ listStyleType: "none", }}>
 					<Link to="/">
 						<li>Home</li>
 					</Link>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import CreateComment from "./CreateComment.jsx";
 import DisplayComment from "./DisplayComment.jsx";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 function DisplayPost({ blogPosts, token, onStateChange }) {
 	const navigate = useNavigate();
@@ -40,7 +40,7 @@ function DisplayPost({ blogPosts, token, onStateChange }) {
 							}}
 							key={uuidv4()}
 						>
-							<ul>
+							<ul style={{ listStyleType: "none" }}>
 								<li>{post.title}</li>
 								<li>{post.date}</li>
 								<li>{post.user.name}</li>
@@ -52,7 +52,7 @@ function DisplayPost({ blogPosts, token, onStateChange }) {
 
 			{singlePost && (
 				<>
-					<ul>
+					<ul style={{ listStyleType: "none" }}>
 						<li>{singlePost.title}</li>
 						<li>{singlePost.date}</li>
 						<li>{singlePost.user.name}</li>
@@ -77,6 +77,6 @@ DisplayPost.propTypes = {
 	blogPosts: PropTypes.array,
 	token: PropTypes.string,
 	onStateChange: PropTypes.func,
-}
+};
 
 export default DisplayPost;
